@@ -13,7 +13,7 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    timer: new Date().toLocaleTimeString(),
+   
   };
 
   handleChange = e => {
@@ -60,10 +60,6 @@ export class App extends Component {
     if (pars) {
       this.setState({ contacts: pars });
     }
-
-    setInterval(() => {
-      this.setState({ timer: new Date().toLocaleTimeString() });
-    }, 1000);
   }
 
   componentDidUpdate() {
@@ -85,19 +81,6 @@ export class App extends Component {
           color: '#010101',
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '200px',
-            height: '50px',
-            color: 'red',
-            border: 'thick double #32a1ce',
-          }}
-        >
-          Local time {this.state.timer}
-        </div>
         <h1>Phonebook</h1>
         <ContactForm handleSubmit={this.handleSubmit} />
         <h2> Contacts</h2>
